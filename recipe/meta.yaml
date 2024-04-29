@@ -1,5 +1,5 @@
 {% set name = "pyproject_hooks" %}
-{% set version = "1.0.0" %}
+{% set version = "1.1.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/pyproject_hooks-{{ version }}.tar.gz
-  sha256: f271b298b97f5955d53fb12b72c1fb1948c22c1a6b70b315c54cedaca0264ef5
+  sha256: 4b37730834edbd6bd37f26ece6b44802fb1c1ee2ece0e54ddff8bfc06db86965
 
 build:
   noarch: python
