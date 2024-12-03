@@ -6,21 +6,21 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/pyproject_hooks-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/pyproject_hooks-{{ version }}.tar.gz
   sha256: 1e859bd5c40fae9448642dd871adf459e5e2084186e8d2c2a79a824c970da1f8
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
 
 requirements:
   host:
-    - python >=3.7
+    - python {{ python_min }}
     - pip
     - flit-core >=3.2, <4
   run:
-    - python >=3.7
+    - python >={{ python_min }}
     - tomli >=1.1.0
 
 test:
@@ -30,6 +30,7 @@ test:
     - pip check
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://pypi.org/project/pyproject_hooks/
